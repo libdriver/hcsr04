@@ -2,13 +2,16 @@
 <img src="/doc/image/logo.png"/>
 </div>
 
-## LibDriver DHT11
+## LibDriver HCSR04
 
 [English](/README.md) | [ 简体中文](/README_CN.md)
 
+HCSR04 ultrasonic ranging module can provide a non-contact distance sensing function of 2cm-400cm.The ranging accuracy can reach 3mm. The module includes ultrasonic transmitter, receiver and control circuit.
+
+LibDriver HCSR04 is the HCSR04 full function driver launched by LibDriver.It provides the function of ultrasonic ranging.
+
 ### Table of Contents
 
-  - [Description](#Description)
   - [Instruction](#Instruction)
   - [Install](#Install)
   - [Usage](#Usage)
@@ -17,13 +20,6 @@
   - [Contributing](#Contributing)
   - [License](#License)
   - [Contact Us](#Contact-Us)
-
-
-### Description
-
-HCSR04 ultrasonic ranging module can provide a non-contact distance sensing function of 2cm-400cm.The ranging accuracy can reach 3mm. The module includes ultrasonic transmitter, receiver and control circuit.
-
-LibDriver HCSR04 is the HCSR04 full function driver launched by LibDriver.It provides the function of ultrasonic ranging.
 
 ### Instruction
 
