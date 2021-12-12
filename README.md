@@ -4,7 +4,7 @@
 
 ## LibDriver HCSR04
 
-[English](/README.md) | [ 简体中文](/README_CN.md)
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
 
 HCSR04 ultrasonic ranging module can provide a non-contact distance sensing function of 2cm-400cm.The ranging accuracy can reach 3mm. The module includes ultrasonic transmitter, receiver and control circuit.
 
@@ -95,7 +95,7 @@ Please sent an e-mail to lishifenging@outlook.com
 
 ### License
 
-Copyright (C) LibDriver 2015-2021 All rights reserved 
+Copyright (c) 2015 - present LibDriver All rights reserved
 
 
 

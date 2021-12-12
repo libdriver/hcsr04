@@ -4,7 +4,7 @@
 
 ## LibDriver HCSR04
 
-[English](/README.md) | [ 简体中文](/README_CH.md)
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
 
 HCSR04超声波测距模块可提供 2cm-400cm的非接触式距离感测功能，测距精度可达高到 3mm。模块包括超声波发射器、接收器与控制电路。
 
@@ -95,7 +95,7 @@ return 0;
 
 ### 版权
 
-版权(C) LibDriver 2015-2021 版权所有
+版权 (c) 2015 - 现在 LibDriver 版权所有
 
 MIT 许可证（MIT）
 
