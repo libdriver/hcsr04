@@ -1,10 +1,12 @@
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+
 <div align=center>
 <img src="/doc/image/logo.png"/>
 </div>
 
 ## LibDriver HCSR04
 
-[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+[![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/hcsr04/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 HCSR04超聲波測距模塊可提供 2cm-400cm的非接觸式距離感測功能，測距精度可達高到 3mm。模塊包括超聲波發射器、接收器與控制電路。
 
