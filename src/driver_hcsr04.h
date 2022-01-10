@@ -61,7 +61,9 @@ extern "C"{
 /**
  * @brief hcsr04 read retry times definition
  */
-#define HCSR04_READ_RETRY_TIMES 3        /**< retry 3 times */
+#ifndef HCSR04_READ_RETRY_TIMES
+    #define HCSR04_READ_RETRY_TIMES 3        /**< retry 3 times */
+#endif
 
 /**
  * @brief hcsr04 time structure definition
