@@ -49,8 +49,8 @@ static hcsr04_handle_t gs_handle;        /**< hcsr04 handle */
  */
 uint8_t hcsr04_read_test(uint32_t times)
 {
-    volatile uint8_t res;
-    volatile uint32_t i;
+    uint8_t res;
+    uint32_t i;
     hcsr04_info_t info;
     
     /* link interface function */
@@ -68,7 +68,7 @@ uint8_t hcsr04_read_test(uint32_t times)
     
     /* get info */
     res = hcsr04_info(&info);
-    if (res)
+    if (res != 0)
     {
         hcsr04_interface_debug_print("hcsr04: get info failed.\n");
        
@@ -90,7 +90,7 @@ uint8_t hcsr04_read_test(uint32_t times)
     
     /* hscr04 init */
     res = hcsr04_init(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         hcsr04_interface_debug_print("hcsr04: init failed.\n");
        
@@ -99,27 +99,28 @@ uint8_t hcsr04_read_test(uint32_t times)
     
     /* start register test */
     hcsr04_interface_debug_print("hcsr04: start register test.\n");
-    for (i=0; i<times; i++)
+    for (i = 0; i < times; i++)
     {
-        volatile uint32_t time_us;
-        volatile float m;
+        uint32_t time_us;
+        float m;
         
         /* read distance */
         res = hcsr04_read(&gs_handle, (uint32_t *)&time_us, (float *)&m);
-        if (res)
+        if (res != 0)
         {
             hcsr04_interface_debug_print("hcsr04: read failed.\n");
-            hcsr04_deinit(&gs_handle);
+            (void)hcsr04_deinit(&gs_handle);
             
             return 1;
         }
-        hcsr04_interface_debug_print("hcsr04: distance is %f cm.\n", m*100);
+        m *= 100.0f;
+        hcsr04_interface_debug_print("hcsr04: distance is %f cm.\n", m);
         hcsr04_interface_delay_ms(2000);
     }
     
     /* finish register test */
     hcsr04_interface_debug_print("hcsr04: finish register test.\n");
-    hcsr04_deinit(&gs_handle);
+    (void)hcsr04_deinit(&gs_handle);
     
     return 0;
 }

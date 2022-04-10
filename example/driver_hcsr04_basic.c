@@ -48,7 +48,7 @@ static hcsr04_handle_t gs_handle;        /**< hcsr04 handle */
  */
 uint8_t hcsr04_basic_init(void)
 {
-    volatile uint8_t res;
+    uint8_t res;
     
     /* link interface function */
     DRIVER_HCSR04_LINK_INIT(&gs_handle, hcsr04_handle_t);
@@ -65,7 +65,7 @@ uint8_t hcsr04_basic_init(void)
     
     /* hcsr04 init */
     res = hcsr04_init(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         hcsr04_interface_debug_print("hcsr04: init failed.\n");
        
@@ -85,10 +85,10 @@ uint8_t hcsr04_basic_init(void)
  */
 uint8_t hcsr04_basic_read(float *m)
 {
-    volatile uint32_t time_us;
+    uint32_t time_us;
     
     /* read distance */
-    if (hcsr04_read(&gs_handle, (uint32_t *)&time_us, m))
+    if (hcsr04_read(&gs_handle, (uint32_t *)&time_us, m) != 0)
     {
         return 1;
     }
@@ -108,7 +108,7 @@ uint8_t hcsr04_basic_read(float *m)
 uint8_t hcsr04_basic_deinit(void)
 {
     /* close hcsr04 */
-    if (hcsr04_deinit(&gs_handle))
+    if (hcsr04_deinit(&gs_handle) != 0)
     {
         return 1;
     }

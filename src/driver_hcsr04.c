@@ -124,16 +124,16 @@ uint8_t hcsr04_init(hcsr04_handle_t *handle)
         return 3;                                                        /* return error */
     }
     
-    if (handle->trig_init())                                             /* initialize trig */
+    if (handle->trig_init() != 0)                                        /* initialize trig */
     {
         handle->debug_print("hcsr04: trig init failed.\n");              /* trig init failed */
        
         return 1;                                                        /* return error */
     }
-    if (handle->echo_init())                                             /* initialize echo */
+    if (handle->echo_init() != 0)                                        /* initialize echo */
     {
         handle->debug_print("hcsr04: echo failed.\n");                   /* return error */
-        handle->trig_deinit();                                           /* deinit trig */
+        (void)handle->trig_deinit();                                     /* deinit trig */
         
         return 1;                                                        /* return error */
     }
@@ -163,13 +163,13 @@ uint8_t hcsr04_deinit(hcsr04_handle_t *handle)
         return 3;                                                    /* return error */
     }
     
-    if (handle->echo_deinit())                                       /* echo deinit */
+    if (handle->echo_deinit() != 0)                                  /* echo deinit */
     {
         handle->debug_print("hcsr04: echo deinit failed.\n");        /* echo deinit failed */
         
         return 1;                                                    /* return error */
     }   
-    if (handle->trig_deinit())                                       /* trig deinit */
+    if (handle->trig_deinit() != 0)                                  /* trig deinit */
     {
         handle->debug_print("hcsr04: trig deinit failed.\n");        /* trig deinit failed */
         
@@ -194,119 +194,122 @@ uint8_t hcsr04_deinit(hcsr04_handle_t *handle)
  */
 uint8_t hcsr04_read(hcsr04_handle_t *handle, uint32_t *time_us, float *m)
 {
-    volatile uint8_t res, value;
-    volatile hcsr04_time_t time_start;
-    volatile hcsr04_time_t time_stop;
-    volatile uint32_t timeout;
-    volatile uint8_t retry = HCSR04_READ_RETRY_TIMES;
+    uint8_t res, value;
+    hcsr04_time_t time_start;
+    hcsr04_time_t time_stop;
+    uint32_t timeout;
+    uint8_t retry = HCSR04_READ_RETRY_TIMES;
     
-    if (handle == NULL)                                                           /* check handle */
+    if (handle == NULL)                                                               /* check handle */
     {
-        return 2;                                                                 /* return error */
+        return 2;                                                                     /* return error */
     }
-    if (handle->inited != 1)                                                      /* check handle initialization */
+    if (handle->inited != 1)                                                          /* check handle initialization */
     {
-        return 3;                                                                 /* return error */
+        return 3;                                                                     /* return error */
     }
     
-    start:
-    
-    res = handle->trig_write(1);                                                  /* write trig 1 */
-    if (res)                                                                      /* check result */
+    while (1)                                                                         /* loop */
     {
-        handle->debug_print("hcsr04: trig write failed.\n");                      /* trig write failed */
-       
-        return 1;                                                                 /* return error */
-    }
-    handle->delay_us(20);                                                         /* delay 20 us */
-    res = handle->trig_write(0);                                                  /* write trig 0 */
-    if (res)                                                                      /* check result */
-    {
-        handle->debug_print("hcsr04: trig write failed.\n");                      /* trig write failed */
-       
-        return 1;                                                                 /* return error */
-    }
-    value = 0;                                                                    /* reset value */
-    timeout = 1000 * 5000;                                                        /* set timeout */
-    while (!value)                                                                /* wait 5 s */
-    {
-        res = handle->echo_read((uint8_t *)&value);                               /* read echo data */
-        if (res)                                                                  /* check result */
+        res = handle->trig_write(1);                                                  /* write trig 1 */
+        if (res != 0)                                                                 /* check result */
         {
-            handle->debug_print("hcsr04: echo read failed.\n");                   /* echo read failed */
+            handle->debug_print("hcsr04: trig write failed.\n");                      /* trig write failed */
            
-            return 1;                                                             /* return error */
+            return 1;                                                                 /* return error */
         }
-        handle->delay_us(1);                                                      /* delay 1 us */
-        timeout--;                                                                /* timeout-- */
-        if (timeout == 0)                                                         /* if timeout */
+        handle->delay_us(20);                                                         /* delay 20 us */
+        res = handle->trig_write(0);                                                  /* write trig 0 */
+        if (res != 0)                                                                 /* check result */
         {
-            handle->debug_print("hcsr04: no response.\n");                        /* no response */
-            
-            return 1;                                                             /* return error */
-        }
-    }
-    res = handle->timestamp_read((hcsr04_time_t *)&time_start);                   /* read timestamp */
-    if (res)                                                                      /* check result */
-    {
-        handle->debug_print("hcsr04: read timestamp failed.\n");                  /* read tiestamp failed */
-       
-        return 1;                                                                 /* return error */
-    }
-    value = 1;                                                                    /* reset value */
-    timeout = 1000 * 5000;                                                        /* wait 5 s */
-    while (value)                                                                 /* check value */
-    {
-        res = handle->echo_read((uint8_t *)&value);                               /* read echo data */
-        if (res)                                                                  /* check result */
-        {
-            handle->debug_print("hcsr04: echo read failed.\n");                   /* echo read failed */
+            handle->debug_print("hcsr04: trig write failed.\n");                      /* trig write failed */
            
-            return 1;                                                             /* return error */
+            return 1;                                                                 /* return error */
         }
-        handle->delay_us(1);                                                      /* delay 1 us */
-        timeout--;                                                                /* timeout-- */
-        if (timeout == 0)                                                         /* if timeout */
+        value = 0;                                                                    /* reset value */
+        timeout = 1000 * 5000;                                                        /* set timeout */
+        while (value == 0)                                                            /* wait 5 s */
         {
-            handle->debug_print("hcsr04: no response.\n");                        /* no response */
-           
-            return 1;                                                             /* return error */
+            res = handle->echo_read((uint8_t *)&value);                               /* read echo data */
+            if (res != 0)                                                             /* check result */
+            {
+                handle->debug_print("hcsr04: echo read failed.\n");                   /* echo read failed */
+               
+                return 1;                                                             /* return error */
+            }
+            handle->delay_us(1);                                                      /* delay 1 us */
+            timeout--;                                                                /* timeout-- */
+            if (timeout == 0)                                                         /* if timeout */
+            {
+                handle->debug_print("hcsr04: no response.\n");                        /* no response */
+                
+                return 1;                                                             /* return error */
+            }
         }
-    }
-    res = handle->timestamp_read((hcsr04_time_t *)&time_stop);                    /* read timestamp */
-    if (res)                                                                      /* check result */
-    {
-        handle->debug_print("hcsr04: read timestamp failed.\n");                  /* read timestamp failed */
-       
-        return 1;                                                                 /* return error */
-    }
-    if (time_stop.millisecond < time_start.millisecond)                           /* check timestamp */
-    {
-        handle->debug_print("hcsr04: millisecond timestamp invalid.\n");          /* millisecond timestamp is invalid */
-       
-        return 1;                                                                 /* return error */
-    }
-    *time_us = (time_stop.millisecond - time_start.millisecond) * 1000
-               +(int32_t)(time_stop.microsecond - time_start.microsecond);        /* get time */
-    if ((*time_us) > 150 * 1000)                                                  /* check time */
-    {
-        if (retry)                                                                /* check remain retry times */
+        res = handle->timestamp_read((hcsr04_time_t *)&time_start);                   /* read timestamp */
+        if (res != 0)                                                                 /* check result */
         {
-            retry--;                                                              /* retry times-- */
-            handle->delay_ms(150 + rand()%100);                                   /* delay rand time */
+            handle->debug_print("hcsr04: read timestamp failed.\n");                  /* read tiestamp failed */
            
-            goto start;                                                           /* restart */
+            return 1;                                                                 /* return error */
+        }
+        value = 1;                                                                    /* reset value */
+        timeout = 1000 * 5000;                                                        /* wait 5 s */
+        while (value != 0)                                                            /* check value */
+        {
+            res = handle->echo_read((uint8_t *)&value);                               /* read echo data */
+            if (res != 0)                                                             /* check result */
+            {
+                handle->debug_print("hcsr04: echo read failed.\n");                   /* echo read failed */
+               
+                return 1;                                                             /* return error */
+            }
+            handle->delay_us(1);                                                      /* delay 1 us */
+            timeout--;                                                                /* timeout-- */
+            if (timeout == 0)                                                         /* if timeout */
+            {
+                handle->debug_print("hcsr04: no response.\n");                        /* no response */
+               
+                return 1;                                                             /* return error */
+            }
+        }
+        res = handle->timestamp_read((hcsr04_time_t *)&time_stop);                    /* read timestamp */
+        if (res != 0)                                                                 /* check result */
+        {
+            handle->debug_print("hcsr04: read timestamp failed.\n");                  /* read timestamp failed */
+           
+            return 1;                                                                 /* return error */
+        }
+        if (time_stop.millisecond < time_start.millisecond)                           /* check timestamp */
+        {
+            handle->debug_print("hcsr04: millisecond timestamp invalid.\n");          /* millisecond timestamp is invalid */
+           
+            return 1;                                                                 /* return error */
+        }
+        *time_us = (time_stop.millisecond - time_start.millisecond) * 1000
+                   +(int32_t)(time_stop.microsecond - time_start.microsecond);        /* get time */
+        if ((*time_us) > 150 * 1000)                                                  /* check time */
+        {
+            if (retry != 0)                                                           /* check remain retry times */
+            {
+                retry--;                                                              /* retry times-- */
+                handle->delay_ms(150 + rand()%100);                                   /* delay rand time */
+            }
+            else
+            {
+                handle->debug_print("hcsr04: no remain retry times.\n");              /* no remain retry times */
+                
+                return 1;                                                             /* return error */
+            }
         }
         else
         {
-            handle->debug_print("hcsr04: no remain retry times.\n");              /* no remain retry times */
+            break;                                                                    /* successful */
         }
-
-        return 1;                                                                 /* return error */
     }
-    *m = 340.0f / 2.0f * (float)(*time_us) / 1000000.0f;                          /* calculate distance */
+    *m = 340.0f / 2.0f * (float)(*time_us) / 1000000.0f;                              /* calculate distance */
 
-    return 0;                                                                     /* success return 0 */
+    return 0;                                                                         /* success return 0 */
 }
 
 /**

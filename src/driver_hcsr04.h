@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_HCSR04_H_
-#define _DRIVER_HCSR04_H_
+#ifndef DRIVER_HCSR04_H
+#define DRIVER_HCSR04_H
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -88,7 +88,7 @@ typedef struct hcsr04_handle_s
     uint8_t (*timestamp_read)(hcsr04_time_t *time);        /**< point to a timestamp_read function address */
     void (*delay_us)(uint32_t ms);                         /**< point to a delay_us function address */
     void (*delay_ms)(uint32_t ms);                         /**< point to a delay_ms function address */
-    uint16_t (*debug_print)(char *fmt, ...);               /**< point to a debug_print function address */
+    void (*debug_print)(const char *const fmt, ...);       /**< point to a debug_print function address */
     uint8_t inited;                                        /**< inited flag */
 } hcsr04_handle_t;
 

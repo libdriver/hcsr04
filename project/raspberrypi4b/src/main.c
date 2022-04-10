@@ -109,7 +109,7 @@ uint8_t hcsr04(uint8_t argc, char **argv)
             if (strcmp("read", argv[2]) == 0)
             {
                 /* run read test */
-                if (hcsr04_read_test(atoi(argv[3])))
+                if (hcsr04_read_test(atoi(argv[3])) != 0)
                 {
                     return 1;
                 }
@@ -130,23 +130,23 @@ uint8_t hcsr04(uint8_t argc, char **argv)
             /* function read */
             if (strcmp("read", argv[2]) == 0)
             {
-                volatile uint8_t res;
-                volatile uint32_t times;
-                volatile uint32_t i;
-                volatile float m;
+                uint8_t res;
+                uint32_t times;
+                uint32_t i;
+                float m;
                 
                 res = hcsr04_basic_init();
-                if (res)
+                if (res != 0)
                 {
                     return 1;
                 }
                 times = atoi(argv[3]);
-                for (i=0; i<times; i++)
+                for (i = 0; i < times; i++)
                 {
                     res = hcsr04_basic_read((float *)&m);
-                    if (res)
+                    if (res != 0)
                     {
-                        hcsr04_basic_deinit();
+                        (void)hcsr04_basic_deinit();
                         
                         return 1;
                     }
@@ -154,7 +154,7 @@ uint8_t hcsr04(uint8_t argc, char **argv)
                     hcsr04_interface_debug_print("hcsr04: %d/%d.\n", (uint32_t)(i+1), (uint32_t)times);
                     hcsr04_interface_debug_print("hcsr04: distance is %0.4fm.\n", m); 
                 }
-                hcsr04_basic_deinit();
+                (void)hcsr04_basic_deinit();
                 
                 return 0;
             }

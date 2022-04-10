@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_HCSR04_READ_TEST_H_
-#define _DRIVER_HCSR04_READ_TEST_H_
+#ifndef DRIVER_HCSR04_READ_TEST_H
+#define DRIVER_HCSR04_READ_TEST_H
 
 #include <driver_hcsr04_interface.h>
 

@@ -1,4 +1,4 @@
-[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md) | [日本語](/README_ja.md) | [Deutsch](/README_de.md) | [한국어](/README_ko.md)
 
 <div align=center>
 <img src="/doc/image/logo.png"/>
@@ -6,11 +6,11 @@
 
 ## LibDriver HCSR04
 
-[![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/hcsr04/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
+[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/hcsr04/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 HCSR04超声波测距模块可提供 2cm-400cm的非接触式距离感测功能，测距精度可达高到 3mm。模块包括超声波发射器、接收器与控制电路。
 
-LibDriver HCSR04是LibDriver推出的HCSR04全功能驱动，该驱动提供超声波测距的功能。
+LibDriver HCSR04是LibDriver推出的HCSR04全功能驱动，该驱动提供超声波测距的功能并且它符合MISRA标准。
 
 ### 目录
 
