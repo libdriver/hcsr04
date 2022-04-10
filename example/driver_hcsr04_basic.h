@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_HCSR04_BASIC_H_
-#define _DRIVER_HCSR04_BASIC_H_
+#ifndef DRIVER_HCSR04_BASIC_H
+#define DRIVER_HCSR04_BASIC_H
 
 #include "driver_hcsr04_interface.h"
 

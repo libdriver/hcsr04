@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_HCSR04_INTERFACE_H_
-#define _DRIVER_HCSR04_INTERFACE_H_
+#ifndef DRIVER_HCSR04_INTERFACE_H
+#define DRIVER_HCSR04_INTERFACE_H
 
 #include "driver_hcsr04.h"
 
@@ -109,13 +109,13 @@ uint8_t hcsr04_interface_echo_read(uint8_t *value);
 
 /**
  * @brief      interface timestamp read
- * @param[out] *time points to a time structure
+ * @param[out] *t points to a time structure
  * @return     status code
  *             - 0 success
  *             - 1 timestamp read failed
  * @note       none
  */
-uint8_t hcsr04_interface_timestamp_read(hcsr04_time_t *time);
+uint8_t hcsr04_interface_timestamp_read(hcsr04_time_t *t);
 
 /**
  * @brief     interface delay us
@@ -134,10 +134,9 @@ void hcsr04_interface_delay_ms(uint32_t ms);
 /**
  * @brief     interface print format data
  * @param[in] fmt is the format data
- * @return    length of the send data
  * @note      none
  */
-uint16_t hcsr04_interface_debug_print(char *fmt, ...);
+void hcsr04_interface_debug_print(const char *const fmt, ...);
 
 /**
  * @}
