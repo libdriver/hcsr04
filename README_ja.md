@@ -55,7 +55,7 @@ uint8_t i;
 float m;
 
 res = hcsr04_basic_init();
-if (res)
+if (res != 0)
 {
     return 1;
 }
@@ -65,9 +65,9 @@ if (res)
 for (i = 0; i < 3; i++)
 {
     res = hcsr04_basic_read((float *)&m);
-    if (res)
+    if (res != 0)
     {
-        hcsr04_basic_deinit();
+        (void)hcsr04_basic_deinit();
 
         return 1;
     }
@@ -80,7 +80,7 @@ for (i = 0; i < 3; i++)
 
 ...
 
-hcsr04_basic_deinit();
+(void)hcsr04_basic_deinit();
 
 return 0;
 ```
