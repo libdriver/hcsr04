@@ -26,15 +26,15 @@ LibDriver HCSR04 ist der HCSR04-Vollfunktionstreiber, der von LibDriver gestarte
 
 /src enthält LibDriver HCSR04-Quelldateien.
 
-/interface enthält die plattformunabhängige Vorlage LibDriver HCSR04 onewire。
+/interface enthält die plattformunabhängige Vorlage LibDriver HCSR04 onewire.
 
-/test enthält den Testcode des LibDriver HCSR04-Treibers und dieser Code kann die erforderliche Funktion des Chips einfach testen。
+/test enthält den Testcode des LibDriver HCSR04-Treibers und dieser Code kann die erforderliche Funktion des Chips einfach testen.
 
 /example enthält LibDriver HCSR04-Beispielcode.
 
 /doc enthält das LibDriver HCSR04-Offlinedokument.
 
-/Datenblatt enthält HCSR04-Datenblatt。
+/Datenblatt enthält HCSR04-Datenblatt.
 
 /project enthält den allgemeinen Beispielcode für Linux- und MCU-Entwicklungsboards. Alle Projekte verwenden das Shell-Skript, um den Treiber zu debuggen, und die detaillierten Anweisungen finden Sie in der README.md jedes Projekts.
 
