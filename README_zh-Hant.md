@@ -50,6 +50,8 @@ LibDriver HCSR04是LibDriver推出的HCSR04全功能驅動，該驅動提供超�
 #### example basic
 
 ```C
+#include "driver_hcsr04_basic.h" 
+
 uint8_t res;
 uint8_t i;
 float m;
