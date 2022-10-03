@@ -50,6 +50,8 @@ LibDriver HCSR04는 LibDriver에서 출시한 HCSR04 전체 기능 드라이버�
 #### example basic
 
 ```C
+#include "driver_hcsr04_basic.h" 
+
 uint8_t res;
 uint8_t i;
 float m;

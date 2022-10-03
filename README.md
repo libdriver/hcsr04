@@ -27,15 +27,15 @@ LibDriver HCSR04 is the HCSR04 full function driver launched by LibDriver.It pro
 
 /src includes LibDriver HCSR04 source files.
 
-/interface includes LibDriver HCSR04 onewire platform independent template。
+/interface includes LibDriver HCSR04 onewire platform independent template.
 
-/test includes LibDriver HCSR04 driver test code and this code can test the chip necessary function simply。
+/test includes LibDriver HCSR04 driver test code and this code can test the chip necessary function simply.
 
 /example includes LibDriver HCSR04 sample code.
 
 /doc includes LibDriver HCSR04 offline document.
 
-/datasheet includes HCSR04 datasheet。
+/datasheet includes HCSR04 datasheet.
 
 /project includes the common Linux and MCU development board sample code. All projects use the shell script to debug the driver and the detail instruction can be found in each project's README.md.
 
@@ -50,6 +50,8 @@ Add /src, /interface and /example to your project.
 #### example basic
 
 ```C
+#include "driver_hcsr04_basic.h" 
+
 uint8_t res;
 uint8_t i;
 float m;

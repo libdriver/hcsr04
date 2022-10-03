@@ -50,6 +50,8 @@ LibDriver HCSR04は、LibDriverによって起動されたHCSR04フル機能ド�
 #### example basic
 
 ```C
+#include "driver_hcsr04_basic.h" 
+
 uint8_t res;
 uint8_t i;
 float m;
