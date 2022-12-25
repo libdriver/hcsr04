@@ -1,10 +1,10 @@
-### 1. Chip
+### 1. Board
 
-#### 1.1 Chip Info
+#### 1.1 Board Info
 
-chip name : Raspberry Pi 4B.
+Board Name: Raspberry Pi 4B.
 
-gpio pin: Trig/Echo GPIO27/GPIO17.
+GPIO Pin: Trig/Echo GPIO27/GPIO17.
 
 ### 2. Install
 
@@ -74,17 +74,35 @@ find_package(hcsr04 REQUIRED)
 
 #### 3.1 Command Instruction
 
-​          hcsr04 is a basic command which can test all hcsr04 driver function:
+1. Show hcsr04 chip and driver information.
 
-​           -h        show hcsr04 help. 
+   ```shell
+   hcsr04 (-i | --information)
+   ```
 
-​           -i         show hcsr04 chip and driver information.
+2. Show hcsr04 help. 
 
-​           -p       show hcsr04 pin connections of the current board.
+   ```shell
+   hcsr04 (-h | --help)
+   ```
 
-​           -t read <times>        run hcsr04 read test. times means the test times.
+3. Show hcsr04 pin connections of the current board.
 
-​           -c read <times>        run hcsr04 read function. times means the read times.
+   ```shell
+   hcsr04 (-p | --port)
+   ```
+
+4. Run hcsr04 read test, times means the test times.
+
+   ```shell
+   hcsr04 (-t read | --test=read) [--times=<num>]
+   ```
+
+5. Run hcsr04 read function, times means the read times.
+
+   ```shell
+   hcsr04 (-e read | --example=read) [--times=<num>]
+   ```
 
 #### 3.2 Command Example
 
@@ -110,7 +128,7 @@ hcsr04: echo pin connected to GPIO17(BCM).
 ```
 
 ```shell
-./hcsr04 -t read 3
+./hcsr04 -t read --times=3
 
 hcsr04: chip is JieShenna HCSR04.
 hcsr04: manufacturer is JieShenna.
@@ -122,35 +140,39 @@ hcsr04: max current is 15.00mA.
 hcsr04: max temperature is 85.0C.
 hcsr04: min temperature is -40.0C.
 hcsr04: start register test.
-hcsr04: distance is 168.807007 cm.
-hcsr04: distance is 167.821045 cm.
-hcsr04: distance is 169.044922 cm.
+hcsr04: distance is 100.979996cm.
+hcsr04: distance is 102.391006cm.
+hcsr04: distance is 101.506996cm.
 hcsr04: finish register test.
 ```
 
 ```shell
-./hcsr04 -c read 3
+./hcsr04 -e read --times=3
 
 hcsr04: 1/3.
-hcsr04: distance is 1.6760m.
+hcsr04: distance is 1.0152m.
 hcsr04: 2/3.
-hcsr04: distance is 1.6838m.
+hcsr04: distance is 1.0193m.
 hcsr04: 3/3.
-hcsr04: distance is 1.6864m.
+hcsr04: distance is 1.0147m.
 ```
 
 ```shell
 ./hcsr04 -h
 
-hcsr04 -h
-	show hcsr04 help.
-hcsr04 -i
-	show hcsr04 chip and driver information.
-hcsr04 -p
-	show hcsr04 pin connections of the current board.
-hcsr04 -t read <times>
-	run hcsr04 read test.times means the test times.
-hcsr04 -c read <times>
-	run hcsr04 read function.times means the read times.
+Usage:
+  hcsr04 (-i | --information)
+  hcsr04 (-h | --help)
+  hcsr04 (-p | --port)
+  hcsr04 (-t read | --test=read) [--times=<num>]
+  hcsr04 (-e read | --example=read) [--times=<num>]
+
+Options:
+  -e <read>, --example=<read>    Run the driver example.
+  -h, --help                     Show the help.
+  -i, --information              Show the chip information.
+  -p, --port                     Display the pin connections of the current board.
+  -t <read>, --test=<read>       Run the driver test.
+      --times=<num>              Set the running times.([default: 3])
 ```
 

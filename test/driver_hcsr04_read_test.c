@@ -80,7 +80,7 @@ uint8_t hcsr04_read_test(uint32_t times)
         hcsr04_interface_debug_print("hcsr04: chip is %s.\n", info.chip_name);
         hcsr04_interface_debug_print("hcsr04: manufacturer is %s.\n", info.manufacturer_name);
         hcsr04_interface_debug_print("hcsr04: interface is %s.\n", info.interface);
-        hcsr04_interface_debug_print("hcsr04: driver version is %d.%d.\n", info.driver_version/1000, (info.driver_version%1000)/100);
+        hcsr04_interface_debug_print("hcsr04: driver version is %d.%d.\n", info.driver_version / 1000, (info.driver_version % 1000) / 100);
         hcsr04_interface_debug_print("hcsr04: min supply voltage is %0.1fV.\n", info.supply_voltage_min_v);
         hcsr04_interface_debug_print("hcsr04: max supply voltage is %0.1fV.\n", info.supply_voltage_max_v);
         hcsr04_interface_debug_print("hcsr04: max current is %0.2fmA.\n", info.max_current_ma);
@@ -114,7 +114,7 @@ uint8_t hcsr04_read_test(uint32_t times)
             return 1;
         }
         m *= 100.0f;
-        hcsr04_interface_debug_print("hcsr04: distance is %f cm.\n", m);
+        hcsr04_interface_debug_print("hcsr04: distance is %fcm.\n", m);
         hcsr04_interface_delay_ms(2000);
     }
     
