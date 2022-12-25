@@ -82,9 +82,9 @@ typedef struct hcsr04_handle_s
     uint8_t (*trig_init)(void);                            /**< point to a trig_init function address */
     uint8_t (*trig_deinit)(void);                          /**< point to a trig_deinit function address */
     uint8_t (*trig_write)(uint8_t value);                  /**< point to a trig_write function address */
-    uint8_t (*echo_init)(void);                            /**< point to a echo_init function address */
-    uint8_t (*echo_deinit)(void);                          /**< point to a echo_deinit function address */
-    uint8_t (*echo_read)(uint8_t *value);                  /**< point to a echo_read function address */
+    uint8_t (*echo_init)(void);                            /**< point to an echo_init function address */
+    uint8_t (*echo_deinit)(void);                          /**< point to an echo_deinit function address */
+    uint8_t (*echo_read)(uint8_t *value);                  /**< point to an echo_read function address */
     uint8_t (*timestamp_read)(hcsr04_time_t *time);        /**< point to a timestamp_read function address */
     void (*delay_us)(uint32_t ms);                         /**< point to a delay_us function address */
     void (*delay_ms)(uint32_t ms);                         /**< point to a delay_ms function address */
@@ -121,7 +121,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     initialize hcsr04_handle_t structure
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] STRUCTURE is hcsr04_handle_t
  * @note      none
  */
@@ -129,7 +129,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link trig_init function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a trig_init function address
  * @note      none
  */
@@ -137,7 +137,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link trig_deinit function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a trig_deinit function address
  * @note      none
  */
@@ -145,7 +145,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link trig_write function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a trig_write function address
  * @note      none
  */
@@ -153,31 +153,31 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link echo_init function
- * @param[in] HANDLE points to a hcsr04 handle structure
- * @param[in] FUC points to a echo_init function address
+ * @param[in] HANDLE points to an hcsr04 handle structure
+ * @param[in] FUC points to an echo_init function address
  * @note      none
  */
 #define DRIVER_HCSR04_LINK_ECHO_INIT(HANDLE, FUC)      (HANDLE)->echo_init = FUC
 
 /**
  * @brief     link echo_deinit function
- * @param[in] HANDLE points to a hcsr04 handle structure
- * @param[in] FUC points to a echo_deinit function address
+ * @param[in] HANDLE points to an hcsr04 handle structure
+ * @param[in] FUC points to an echo_deinit function address
  * @note      none
  */
 #define DRIVER_HCSR04_LINK_ECHO_DEINIT(HANDLE, FUC)    (HANDLE)->echo_deinit = FUC
 
 /**
  * @brief     link echo_read function
- * @param[in] HANDLE points to a hcsr04 handle structure
- * @param[in] FUC points to a echo_read function address
+ * @param[in] HANDLE points to an hcsr04 handle structure
+ * @param[in] FUC points to an echo_read function address
  * @note      none
  */
 #define DRIVER_HCSR04_LINK_ECHO_WRITE(HANDLE, FUC)     (HANDLE)->echo_read = FUC
 
 /**
  * @brief     link timestamp_read function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a timestamp_read function address
  * @note      none
  */
@@ -185,7 +185,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a delay_ms function address
  * @note      none
  */
@@ -193,7 +193,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link delay_us function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a delay_us function address
  * @note      none
  */
@@ -201,7 +201,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to a hcsr04 handle structure
+ * @param[in] HANDLE points to an hcsr04 handle structure
  * @param[in] FUC points to a debug_print function address
  * @note      none
  */
@@ -220,7 +220,7 @@ typedef struct hcsr04_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to a hcsr04 info structure
+ * @param[out] *info points to an hcsr04 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -230,7 +230,7 @@ uint8_t hcsr04_info(hcsr04_info_t *info);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to a hcsr04 handle structure
+ * @param[in] *handle points to an hcsr04 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo init failed
@@ -242,7 +242,7 @@ uint8_t hcsr04_init(hcsr04_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to a hcsr04 handle structure
+ * @param[in] *handle points to an hcsr04 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo deinit failed
@@ -254,7 +254,7 @@ uint8_t hcsr04_deinit(hcsr04_handle_t *handle);
 
 /**
  * @brief      read the distance
- * @param[in]  *handle points to a hcsr04 handle structure
+ * @param[in]  *handle points to an hcsr04 handle structure
  * @param[out] *time_us points to a us buffer
  * @param[out] *m points to a distance buffer
  * @return     status code

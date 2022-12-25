@@ -51,7 +51,7 @@
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to a hcsr04 handle structure
+ * @param[in] *handle points to an hcsr04 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo init failed
@@ -144,7 +144,7 @@ uint8_t hcsr04_init(hcsr04_handle_t *handle)
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to a hcsr04 handle structure
+ * @param[in] *handle points to an hcsr04 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo deinit failed
@@ -182,7 +182,7 @@ uint8_t hcsr04_deinit(hcsr04_handle_t *handle)
 
 /**
  * @brief      read the distance
- * @param[in]  *handle points to a hcsr04 handle structure
+ * @param[in]  *handle points to an hcsr04 handle structure
  * @param[out] *time_us points to a us buffer
  * @param[out] *m points to a distance buffer
  * @return     status code
@@ -314,7 +314,7 @@ uint8_t hcsr04_read(hcsr04_handle_t *handle, uint32_t *time_us, float *m)
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to a hcsr04 info structure
+ * @param[out] *info points to an hcsr04 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL

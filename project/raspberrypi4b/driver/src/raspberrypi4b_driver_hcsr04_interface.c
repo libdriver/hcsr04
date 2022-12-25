@@ -126,7 +126,7 @@ uint8_t hcsr04_interface_timestamp_read(hcsr04_time_t *t)
 {
     struct timeval time_s;
     
-    if (gettimeofday(&time_s, NULL))
+    if (gettimeofday(&time_s, NULL) < 0)
     {
         return 1;
     }
@@ -148,6 +148,7 @@ void hcsr04_interface_delay_us(uint32_t us)
     {
         return;
     }
+
     usleep(us);
 }
 
@@ -172,7 +173,7 @@ void hcsr04_interface_debug_print(const char *const fmt, ...)
     uint8_t len;
     va_list args;
     
-    memset((char *)str, 0, sizeof(char)*256); 
+    memset((char *)str, 0, sizeof(char) * 256); 
     va_start(args, fmt);
     vsnprintf((char *)str, 256, (char const *)fmt, args);
     va_end(args);
