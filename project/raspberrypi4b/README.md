@@ -92,13 +92,13 @@ find_package(hcsr04 REQUIRED)
    hcsr04 (-p | --port)
    ```
 
-4. Run hcsr04 read test, times means the test times.
+4. Run hcsr04 read test, num means the test times.
 
    ```shell
    hcsr04 (-t read | --test=read) [--times=<num>]
    ```
 
-5. Run hcsr04 read function, times means the read times.
+5. Run hcsr04 read function, num means the read times.
 
    ```shell
    hcsr04 (-e read | --example=read) [--times=<num>]
