@@ -39,6 +39,8 @@ LibDriver HCSR04 is the HCSR04 full function driver launched by LibDriver.It pro
 
 /project includes the common Linux and MCU development board sample code. All projects use the shell script to debug the driver and the detail instruction can be found in each project's README.md.
 
+/misra includes the LibDriver MISRA code scanning results.
+
 ### Install
 
 Reference /interface gpio platform independent template and finish your platform gpio driver.
