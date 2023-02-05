@@ -249,7 +249,7 @@ uint8_t hcsr04_read(hcsr04_handle_t *handle, uint32_t *time_us, float *m)
         res = handle->timestamp_read((hcsr04_time_t *)&time_start);                   /* read timestamp */
         if (res != 0)                                                                 /* check result */
         {
-            handle->debug_print("hcsr04: read timestamp failed.\n");                  /* read tiestamp failed */
+            handle->debug_print("hcsr04: read timestamp failed.\n");                  /* read timestamp failed */
            
             return 1;                                                                 /* return error */
         }
@@ -336,7 +336,7 @@ uint8_t hcsr04_info(hcsr04_info_t *info)
     info->max_current_ma = MAX_CURRENT;                             /* set maximum current */
     info->temperature_max = TEMPERATURE_MAX;                        /* set minimal temperature */
     info->temperature_min = TEMPERATURE_MIN;                        /* set maximum temperature */
-    info->driver_version = DRIVER_VERSION;                          /* set driver verison */
+    info->driver_version = DRIVER_VERSION;                          /* set driver version */
     
     return 0;                                                       /* success return 0 */
 }
