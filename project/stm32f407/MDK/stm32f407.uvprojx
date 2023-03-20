@@ -473,6 +473,11 @@
               <FileType>1</FileType>
               <FilePath>..\interface\src\wire.c</FilePath>
             </File>
+            <File>
+              <FileName>tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\interface\src\tim.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
