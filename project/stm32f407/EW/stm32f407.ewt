@@ -1718,6 +1718,9 @@
             <name>$PROJ_DIR$\..\interface\src\delay.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\interface\src\tim.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\interface\src\uart.c</name>
         </file>
         <file>

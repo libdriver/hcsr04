@@ -36,6 +36,7 @@
 
 #include "stm32f4xx_it.h"
 #include "uart.h"
+#include "tim.h"
 
 /**
  * @brief nmi handler
@@ -209,5 +210,29 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
     {
         /* set tx done */
         uart2_set_tx_done();
+    }
+}
+
+/**
+ * @brief tim2 irq handler
+ * @note  none
+ */
+void TIM2_IRQHandler(void)
+{
+    /* run the tim callback */
+    HAL_TIM_IRQHandler(tim_get_handle());
+}
+
+/**
+ * @brief     tim period elapsed callback
+ * @param[in] *htim points to a tim handle
+ * @note      none
+ */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM2)
+    {
+        /* run the tim irq handler */
+        tim_irq_handler();
     }
 }

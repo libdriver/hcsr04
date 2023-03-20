@@ -148,5 +148,42 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 }
 
 /**
+ * @brief     tim hal init
+ * @param[in] *htim points to a tim handle
+ * @note      none
+ */
+void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM2)
+    {
+        /* enable tim2 clock */
+        __HAL_RCC_TIM2_CLK_ENABLE();
+        
+        /* set tim2 nvic priority */
+        HAL_NVIC_SetPriority(TIM2_IRQn, 3, 0);
+        
+        /* enable nvic */
+        HAL_NVIC_EnableIRQ(TIM2_IRQn);
+    }
+}
+
+/**
+ * @brief     tim hal deinit
+ * @param[in] *htim points to a tim handle
+ * @note      none
+ */
+void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM2)
+    {
+        /* disable tim2 clock */
+        __HAL_RCC_TIM2_CLK_DISABLE();
+        
+        /* disable nvic */
+        HAL_NVIC_DisableIRQ(TIM2_IRQn);
+    }
+}
+
+/**
  * @}
  */

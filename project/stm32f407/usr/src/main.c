@@ -47,8 +47,9 @@
 /**
  * @brief global var definition
  */
-uint8_t g_buf[256];        /**< uart buffer */
-volatile uint16_t g_len;   /**< uart buffer length */
+uint8_t g_buf[256];                                      /**< uart buffer */
+volatile uint16_t g_len;                                 /**< uart buffer length */
+extern uint8_t hcsr04_interface_timer_init(void);        /**< timer init function */
 
 /**
  * @brief     hcsr04 full function
@@ -289,6 +290,9 @@ int main(void)
     
     /* uart init */
     uart_init(115200);
+    
+    /* timer init */
+    hcsr04_interface_timer_init();
     
     /* shell init && register hcsr04 function */
     shell_init();

@@ -39,7 +39,47 @@
 #include "delay.h"
 #include "uart.h"
 #include "wire.h"
+#include "tim.h"
 #include <stdarg.h>
+
+/**
+ * @brief timer var definition
+ */
+static uint32_t gs_ms = 0;        /**< ms */
+
+/**
+ * @brief     timer callback
+ * @param[in] us is the timer cnt
+ * @note      none
+ */
+static void gs_tim_irq(uint32_t us)
+{
+    gs_ms += us / 1000;
+}
+
+/**
+ * @brief  interface timer init
+ * @return status code
+ *         - 0 success
+ *         - 1 init failed
+ * @note   none
+ */
+uint8_t hcsr04_interface_timer_init(void)
+{
+    /* timer init */
+    if (tim_init(1000, gs_tim_irq) != 0)
+    {
+        return 1;
+    }
+    
+    /* timer start */
+    if (tim_start() != 0)
+    {
+        return 1;
+    }
+    
+    return 0;
+}
 
 /**
  * @brief  interface trig init
@@ -125,8 +165,8 @@ uint8_t hcsr04_interface_echo_read(uint8_t *value)
  */
 uint8_t hcsr04_interface_timestamp_read(hcsr04_time_t *t)
 {
-    t->millisecond = HAL_GetTick();
-    t->microsecond = SysTick->VAL / 168;
+    t->millisecond = gs_ms;
+    t->microsecond = tim_get_handle()->Instance->CNT;
     
     return 0;
 }
