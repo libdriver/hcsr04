@@ -1,6 +1,6 @@
 /**
  * @mainpage  LibDriver HCSR04
- * @brief     libdriver hcsr04 is a full function driver of hcsr04 and it can run in both MCU and Linux platform.
+ * @brief     LibDriver HCSR04 is a full function driver of HCSR04 and it can run in both MCU and Linux platform.
  * @version   2.0.0
  * @author    Shifeng Li
  *
