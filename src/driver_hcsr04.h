@@ -70,7 +70,7 @@ extern "C"{
  */
 typedef struct hcsr04_time_s
 {
-    uint32_t microsecond;        /**< microsecond */
+    uint64_t microsecond;        /**< microsecond */
     uint32_t millisecond;        /**< millisecond */
 } hcsr04_time_t;
 
