@@ -131,7 +131,7 @@ uint8_t hcsr04_interface_timestamp_read(hcsr04_time_t *t)
         return 1;
     }
 
-    t->millisecond = time_s.tv_usec / 1000;
+    t->millisecond = time_s.tv_usec / 1000 + time_s.tv_sec * 1000;
     t->microsecond = time_s.tv_usec % 1000;
     
     return 0;

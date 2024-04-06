@@ -1,7 +1,7 @@
 var group__hcsr04__base__driver =
 [
     [ "hcsr04_time_s", "structhcsr04__time__s.html", [
-      [ "microsecond", "structhcsr04__time__s.html#afe595229f4df4f17bbda0b5652072dd6", null ],
+      [ "microsecond", "structhcsr04__time__s.html#ae8f6fcb839f13e81b2edc3679d1147b0", null ],
       [ "millisecond", "structhcsr04__time__s.html#a53f7baced583fe51c9a6f7df5977954a", null ]
     ] ],
     [ "hcsr04_handle_s", "structhcsr04__handle__s.html", [
