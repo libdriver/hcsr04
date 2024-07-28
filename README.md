@@ -27,7 +27,7 @@ LibDriver HCSR04 is the HCSR04 full function driver launched by LibDriver.It pro
 
 /src includes LibDriver HCSR04 source files.
 
-/interface includes LibDriver HCSR04 onewire platform independent template.
+/interface includes LibDriver HCSR04 gpio platform independent template.
 
 /test includes LibDriver HCSR04 driver test code and this code can test the chip necessary function simply.
 

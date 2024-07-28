@@ -27,7 +27,7 @@ LibDriver HCSR04는 LibDriver에서 출시한 HCSR04 전체 기능 드라이버�
 
 /src 디렉토리에는 LibDriver HCSR04의 소스 파일이 포함되어 있습니다.
 
-/interface 디렉토리에는 LibDriver HCSR04용 플랫폼 독립적인 onewire버스 템플릿이 포함되어 있습니다.
+/interface 디렉토리에는 LibDriver HCSR04용 플랫폼 독립적인 gpio버스 템플릿이 포함되어 있습니다.
 
 /test 디렉토리에는 LibDriver HCSR04드라이버 테스트 프로그램이 포함되어 있어 칩의 필요한 기능을 간단히 테스트할 수 있습니다.
 

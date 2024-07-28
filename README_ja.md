@@ -27,7 +27,7 @@ LibDriver HCSR04は、LibDriverによって起動されたHCSR04フル機能ド�
 
 / srcディレクトリには、LibDriver HCSR04のソースファイルが含まれています。
 
-/ interfaceディレクトリには、LibDriver HCSR04用のプラットフォームに依存しないonewireバステンプレートが含まれています。
+/ interfaceディレクトリには、LibDriver HCSR04用のプラットフォームに依存しないgpioバステンプレートが含まれています。
 
 / testディレクトリには、チップの必要な機能を簡単にテストできるLibDriver HCSR04ドライバーテストプログラムが含まれています。
 
