@@ -97,8 +97,8 @@ uint8_t hcsr04_read_test(uint32_t times)
         return 1;
     }
     
-    /* start register test */
-    hcsr04_interface_debug_print("hcsr04: start register test.\n");
+    /* start read test */
+    hcsr04_interface_debug_print("hcsr04: start read test.\n");
     for (i = 0; i < times; i++)
     {
         uint32_t time_us;
@@ -118,8 +118,8 @@ uint8_t hcsr04_read_test(uint32_t times)
         hcsr04_interface_delay_ms(2000);
     }
     
-    /* finish register test */
-    hcsr04_interface_debug_print("hcsr04: finish register test.\n");
+    /* finish read test */
+    hcsr04_interface_debug_print("hcsr04: finish read test.\n");
     (void)hcsr04_deinit(&gs_handle);
     
     return 0;

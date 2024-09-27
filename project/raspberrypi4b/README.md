@@ -139,11 +139,11 @@ hcsr04: max supply voltage is 5.0V.
 hcsr04: max current is 15.00mA.
 hcsr04: max temperature is 85.0C.
 hcsr04: min temperature is -40.0C.
-hcsr04: start register test.
+hcsr04: start read test.
 hcsr04: distance is 100.979996cm.
 hcsr04: distance is 102.391006cm.
 hcsr04: distance is 101.506996cm.
-hcsr04: finish register test.
+hcsr04: finish read test.
 ```
 
 ```shell
