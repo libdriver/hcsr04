@@ -1,3 +1,9 @@
+## 2.0.4 (2024-09-27)
+
+## Bug Fixes
+
+- fix output errors
+
 ## 2.0.3 (2024-08-05)
 
 ## Bug Fixes
