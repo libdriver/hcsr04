@@ -233,7 +233,7 @@ Functions</h2></td></tr>
 <p>close the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an hcsr04 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an hcsr04 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -269,7 +269,7 @@ Functions</h2></td></tr>
 <p>get chip's information </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>points to an hcsr04 info structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>pointer to an hcsr04 info structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -303,7 +303,7 @@ Functions</h2></td></tr>
 <p>initialize the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an hcsr04 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an hcsr04 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -355,9 +355,9 @@ Functions</h2></td></tr>
 <p>read the distance </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an hcsr04 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*time_us</td><td>points to a us buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*m</td><td>points to a distance buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an hcsr04 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*time_us</td><td>pointer to a us buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*m</td><td>pointer to a distance buffer </td></tr>
   </table>
   </dd>
 </dl>

@@ -71,7 +71,7 @@ uint8_t hcsr04_interface_trig_deinit(void);
 
 /**
  * @brief     interface trig write
- * @param[in] value is the written value
+ * @param[in] value written value
  * @return    status code
  *            - 0 success
  *            - 1 trig write failed
@@ -99,7 +99,7 @@ uint8_t hcsr04_interface_echo_deinit(void);
 
 /**
  * @brief      interface echo read
- * @param[out] *value points to a value buffer
+ * @param[out] *value pointer to a value buffer
  * @return     status code
  *             - 0 success
  *             - 1 echo read failed
@@ -109,7 +109,7 @@ uint8_t hcsr04_interface_echo_read(uint8_t *value);
 
 /**
  * @brief      interface timestamp read
- * @param[out] *t points to a time structure
+ * @param[out] *t pointer to a time structure
  * @return     status code
  *             - 0 success
  *             - 1 timestamp read failed
@@ -119,21 +119,21 @@ uint8_t hcsr04_interface_timestamp_read(hcsr04_time_t *t);
 
 /**
  * @brief     interface delay us
- * @param[in] us
+ * @param[in] us time
  * @note      none
  */
 void hcsr04_interface_delay_us(uint32_t us);
 
 /**
  * @brief     interface delay ms
- * @param[in] ms
+ * @param[in] ms time
  * @note      none
  */
 void hcsr04_interface_delay_ms(uint32_t ms);
 
 /**
  * @brief     interface print format data
- * @param[in] fmt is the format data
+ * @param[in] fmt format data
  * @note      none
  */
 void hcsr04_interface_debug_print(const char *const fmt, ...);
