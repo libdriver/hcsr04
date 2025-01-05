@@ -1,3 +1,9 @@
+## 2.0.6 (2025-01-05)
+
+## Bug Fixes
+
+- fix getopt errors
+
 ## 2.0.5 (2024-12-08)
 
 ## Bug Fixes
