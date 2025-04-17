@@ -10,7 +10,7 @@
 
 HCSR04 ultrasonic ranging module can provide a non-contact distance sensing function of 2cm-400cm.The ranging accuracy can reach 3mm. The module includes ultrasonic transmitter, receiver and control circuit.
 
-LibDriver HCSR04 is the HCSR04 full function driver launched by LibDriver.It provides the function of ultrasonic ranging.LibDriver is MISRA compliant.
+LibDriver HCSR04 is a full-featured driver of HCSR04 launched by LibDriver.It provides the function of ultrasonic ranging.LibDriver is MISRA compliant.
 
 ### Table of Contents
 
