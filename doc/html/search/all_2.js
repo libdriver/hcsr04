@@ -1,6 +1,28 @@
 var searchData=
 [
-  ['echo_5fdeinit_26',['echo_deinit',['../structhcsr04__handle__s.html#a7509d96f6e6ce46577b13e85a6abc04c',1,'hcsr04_handle_s']]],
-  ['echo_5finit_27',['echo_init',['../structhcsr04__handle__s.html#aec302f5f133b24b28015ba16debf1475',1,'hcsr04_handle_s']]],
-  ['echo_5fread_28',['echo_read',['../structhcsr04__handle__s.html#a51e661d74ab40a6bd36c4ceab62b7809',1,'hcsr04_handle_s']]]
+  ['debug_5fprint_0',['debug_print',['../structhcsr04__handle__s.html#a769d5b3a6c14790a0e126e8fe70b384b',1,'hcsr04_handle_s']]],
+  ['delay_5fms_1',['delay_ms',['../structhcsr04__handle__s.html#a406c9433252b7366de417b7a60915c81',1,'hcsr04_handle_s']]],
+  ['delay_5fus_2',['delay_us',['../structhcsr04__handle__s.html#a538ee5e27967b126ec220df6386d3f43',1,'hcsr04_handle_s']]],
+  ['driver_20function_3',['driver function',['../group__hcsr04__base__driver.html',1,'hcsr04 base driver function'],['../group__hcsr04__driver.html',1,'hcsr04 driver function'],['../group__hcsr04__example__driver.html',1,'hcsr04 example driver function'],['../group__hcsr04__interface__driver.html',1,'hcsr04 interface driver function'],['../group__hcsr04__link__driver.html',1,'hcsr04 link driver function'],['../group__hcsr04__test__driver.html',1,'hcsr04 test driver function']]],
+  ['driver_5fhcsr04_2ec_4',['driver_hcsr04.c',['../driver__hcsr04_8c.html',1,'']]],
+  ['driver_5fhcsr04_2eh_5',['driver_hcsr04.h',['../driver__hcsr04_8h.html',1,'']]],
+  ['driver_5fhcsr04_5fbasic_2ec_6',['driver_hcsr04_basic.c',['../driver__hcsr04__basic_8c.html',1,'']]],
+  ['driver_5fhcsr04_5fbasic_2eh_7',['driver_hcsr04_basic.h',['../driver__hcsr04__basic_8h.html',1,'']]],
+  ['driver_5fhcsr04_5finterface_2eh_8',['driver_hcsr04_interface.h',['../driver__hcsr04__interface_8h.html',1,'']]],
+  ['driver_5fhcsr04_5finterface_5ftemplate_2ec_9',['driver_hcsr04_interface_template.c',['../driver__hcsr04__interface__template_8c.html',1,'']]],
+  ['driver_5fhcsr04_5flink_5fdebug_5fprint_10',['DRIVER_HCSR04_LINK_DEBUG_PRINT',['../group__hcsr04__link__driver.html#ga14582a24e251aed0c906074846ac2003',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5fdelay_5fms_11',['DRIVER_HCSR04_LINK_DELAY_MS',['../group__hcsr04__link__driver.html#ga88ace95b39651bd689d4c56e428bca88',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5fdelay_5fus_12',['DRIVER_HCSR04_LINK_DELAY_US',['../group__hcsr04__link__driver.html#gaae0d20c5d7c9e49bb10229fcaa00cf19',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5fecho_5fdeinit_13',['DRIVER_HCSR04_LINK_ECHO_DEINIT',['../group__hcsr04__link__driver.html#gaad4bcb4577728627a624cbcafce9b6dc',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5fecho_5finit_14',['DRIVER_HCSR04_LINK_ECHO_INIT',['../group__hcsr04__link__driver.html#ga943720d9c55a2f6494d3a8c372d73dcd',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5fecho_5fwrite_15',['DRIVER_HCSR04_LINK_ECHO_WRITE',['../group__hcsr04__link__driver.html#gac575dd4e965d9331443f14a1efe4583f',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5finit_16',['DRIVER_HCSR04_LINK_INIT',['../group__hcsr04__link__driver.html#ga700bf1b54d7066a1b9b21eabc4873e9e',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5ftimestamp_5fread_17',['DRIVER_HCSR04_LINK_TIMESTAMP_READ',['../group__hcsr04__link__driver.html#gaca0e83190e7de4edfa2f3f3af55677d8',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5ftrig_5fdeinit_18',['DRIVER_HCSR04_LINK_TRIG_DEINIT',['../group__hcsr04__link__driver.html#gad028ce922a50e5ccfeda5c2c225fc52c',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5ftrig_5finit_19',['DRIVER_HCSR04_LINK_TRIG_INIT',['../group__hcsr04__link__driver.html#ga192d52401800ede93012e363083293d3',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5ftrig_5fwrite_20',['DRIVER_HCSR04_LINK_TRIG_WRITE',['../group__hcsr04__link__driver.html#gaeb8cb206fd900a28b8b040fb92b7e1b1',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5fread_5ftest_2ec_21',['driver_hcsr04_read_test.c',['../driver__hcsr04__read__test_8c.html',1,'']]],
+  ['driver_5fhcsr04_5fread_5ftest_2eh_22',['driver_hcsr04_read_test.h',['../driver__hcsr04__read__test_8h.html',1,'']]],
+  ['driver_5fversion_23',['DRIVER_VERSION',['../driver__hcsr04_8c.html#ae578001fe043b4cca7a0edd801cfe9c4',1,'driver_hcsr04.c']]],
+  ['driver_5fversion_24',['driver_version',['../structhcsr04__info__s.html#a41b0bd442708b70d252c50b92c75265a',1,'hcsr04_info_s']]]
 ];
