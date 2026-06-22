@@ -86,7 +86,7 @@ typedef struct hcsr04_handle_s
     uint8_t (*echo_deinit)(void);                          /**< point to an echo_deinit function address */
     uint8_t (*echo_read)(uint8_t *value);                  /**< point to an echo_read function address */
     uint8_t (*timestamp_read)(hcsr04_time_t *time);        /**< point to a timestamp_read function address */
-    void (*delay_us)(uint32_t ms);                         /**< point to a delay_us function address */
+    void (*delay_us)(uint32_t us);                         /**< point to a delay_us function address */
     void (*delay_ms)(uint32_t ms);                         /**< point to a delay_ms function address */
     void (*debug_print)(const char *const fmt, ...);       /**< point to a debug_print function address */
     uint8_t inited;                                        /**< inited flag */
@@ -173,7 +173,7 @@ typedef struct hcsr04_info_s
  * @param[in] FUC pointer to an echo_read function address
  * @note      none
  */
-#define DRIVER_HCSR04_LINK_ECHO_WRITE(HANDLE, FUC)     (HANDLE)->echo_read = FUC
+#define DRIVER_HCSR04_LINK_ECHO_READ(HANDLE, FUC)      (HANDLE)->echo_read = FUC
 
 /**
  * @brief     link timestamp_read function

@@ -57,7 +57,7 @@ uint8_t hcsr04_basic_init(void)
     DRIVER_HCSR04_LINK_TRIG_WRITE(&gs_handle, hcsr04_interface_trig_write);
     DRIVER_HCSR04_LINK_ECHO_INIT(&gs_handle, hcsr04_interface_echo_init);
     DRIVER_HCSR04_LINK_ECHO_DEINIT(&gs_handle, hcsr04_interface_echo_deinit);
-    DRIVER_HCSR04_LINK_ECHO_WRITE(&gs_handle, hcsr04_interface_echo_read);
+    DRIVER_HCSR04_LINK_ECHO_READ(&gs_handle, hcsr04_interface_echo_read);
     DRIVER_HCSR04_LINK_TIMESTAMP_READ(&gs_handle, hcsr04_interface_timestamp_read);
     DRIVER_HCSR04_LINK_DELAY_MS(&gs_handle, hcsr04_interface_delay_ms);
     DRIVER_HCSR04_LINK_DELAY_US(&gs_handle, hcsr04_interface_delay_us);
