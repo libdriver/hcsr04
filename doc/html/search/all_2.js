@@ -2,7 +2,7 @@ var searchData=
 [
   ['debug_5fprint_0',['debug_print',['../structhcsr04__handle__s.html#a769d5b3a6c14790a0e126e8fe70b384b',1,'hcsr04_handle_s']]],
   ['delay_5fms_1',['delay_ms',['../structhcsr04__handle__s.html#a406c9433252b7366de417b7a60915c81',1,'hcsr04_handle_s']]],
-  ['delay_5fus_2',['delay_us',['../structhcsr04__handle__s.html#a538ee5e27967b126ec220df6386d3f43',1,'hcsr04_handle_s']]],
+  ['delay_5fus_2',['delay_us',['../structhcsr04__handle__s.html#a97ffc4fce945527bd6ab25a3596caef7',1,'hcsr04_handle_s']]],
   ['driver_20function_3',['driver function',['../group__hcsr04__base__driver.html',1,'hcsr04 base driver function'],['../group__hcsr04__driver.html',1,'hcsr04 driver function'],['../group__hcsr04__example__driver.html',1,'hcsr04 example driver function'],['../group__hcsr04__interface__driver.html',1,'hcsr04 interface driver function'],['../group__hcsr04__link__driver.html',1,'hcsr04 link driver function'],['../group__hcsr04__test__driver.html',1,'hcsr04 test driver function']]],
   ['driver_5fhcsr04_2ec_4',['driver_hcsr04.c',['../driver__hcsr04_8c.html',1,'']]],
   ['driver_5fhcsr04_2eh_5',['driver_hcsr04.h',['../driver__hcsr04_8h.html',1,'']]],
@@ -15,7 +15,7 @@ var searchData=
   ['driver_5fhcsr04_5flink_5fdelay_5fus_12',['DRIVER_HCSR04_LINK_DELAY_US',['../group__hcsr04__link__driver.html#gaae0d20c5d7c9e49bb10229fcaa00cf19',1,'driver_hcsr04.h']]],
   ['driver_5fhcsr04_5flink_5fecho_5fdeinit_13',['DRIVER_HCSR04_LINK_ECHO_DEINIT',['../group__hcsr04__link__driver.html#gaad4bcb4577728627a624cbcafce9b6dc',1,'driver_hcsr04.h']]],
   ['driver_5fhcsr04_5flink_5fecho_5finit_14',['DRIVER_HCSR04_LINK_ECHO_INIT',['../group__hcsr04__link__driver.html#ga943720d9c55a2f6494d3a8c372d73dcd',1,'driver_hcsr04.h']]],
-  ['driver_5fhcsr04_5flink_5fecho_5fwrite_15',['DRIVER_HCSR04_LINK_ECHO_WRITE',['../group__hcsr04__link__driver.html#gac575dd4e965d9331443f14a1efe4583f',1,'driver_hcsr04.h']]],
+  ['driver_5fhcsr04_5flink_5fecho_5fread_15',['DRIVER_HCSR04_LINK_ECHO_READ',['../group__hcsr04__link__driver.html#gab06bfee4bdbee0579c2610e0febb4f3e',1,'driver_hcsr04.h']]],
   ['driver_5fhcsr04_5flink_5finit_16',['DRIVER_HCSR04_LINK_INIT',['../group__hcsr04__link__driver.html#ga700bf1b54d7066a1b9b21eabc4873e9e',1,'driver_hcsr04.h']]],
   ['driver_5fhcsr04_5flink_5ftimestamp_5fread_17',['DRIVER_HCSR04_LINK_TIMESTAMP_READ',['../group__hcsr04__link__driver.html#gaca0e83190e7de4edfa2f3f3af55677d8',1,'driver_hcsr04.h']]],
   ['driver_5fhcsr04_5flink_5ftrig_5fdeinit_18',['DRIVER_HCSR04_LINK_TRIG_DEINIT',['../group__hcsr04__link__driver.html#gad028ce922a50e5ccfeda5c2c225fc52c',1,'driver_hcsr04.h']]],
